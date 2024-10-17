@@ -1,0 +1,21 @@
+describe('Header and Footer Tests', () => {
+  beforeEach(() => {
+    cy.visit('https://qauto.forstudy.space/login');
+    cy.get('input[name="email"]').type('guest');
+    cy.get('input[name="password"]').type('welcome2qauto');
+    cy.get('button[type="submit"]').click();
+  ;
+});
+  
+  
+  
+    it ('Find all buttons in the header', () => {
+        cy.get('header').find('button').should('have.lenght.greaterThen', 0)
+    })
+  
+  
+    it('Find all buttons in the footer', () => {
+  cy.get('footer').find('button').should('have.lenght.greaterThen', 0);
+    })
+  });
+  
