@@ -13,3 +13,12 @@ module.exports = defineConfig({
     }
   },
 });
+
+
+
+{
+  env: {
+    MY_VARIABLE: "some_value"
+  }
+  
+}
