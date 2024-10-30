@@ -5,7 +5,7 @@ import BasePage from "./BasePage";
 class LoginPage extends BasePage {
 
     get userNameField() {
-        return cy.get('#user-name', {timeout: 10000});
+        return cy.get('[data-test="username"]', {timeout: 10000});
     }
 
     get passwordField() {
