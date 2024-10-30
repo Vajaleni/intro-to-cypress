@@ -2,11 +2,11 @@ import LoginPage from '../../support/pageObject/page/LoginPage';
 import InventoryPage from '../../support/pageObject/page/InventoryPage';
 import ItemPage from '../../support/pageObject/page/ItemPage';
 import credentials from '../../fixtures/credentials.json';
-import cypress from 'cypress';
+
 
 describe('SauceDemo Tests', () => {
     beforeEach(() => {
-        Cypress.config('chromeWebSecurity', false); 
+        Cypress.config(); 
     });
 
     it('Login Page Tests with Correct Credentials', () => {
