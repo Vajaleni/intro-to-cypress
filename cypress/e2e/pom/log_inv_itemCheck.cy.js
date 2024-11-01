@@ -29,11 +29,12 @@ describe('SauceDemo Tests', () => {
         
         LoginPage.open();
         LoginPage.login(credentials.userNames.correctUserName, credentials.passwords.correctPassword);
+        cy.url().should('eq', `${Cypress.env('BASE_URL')}/inventory.html`);
+        cy.wait(1000);
 
         InventoryPage.checkUIElements();
         InventoryPage.checkDropdownOptions();
-        InventoryPage.goToCart();
-        InventoryPage.clickOnItem(0); 
+       
     });
 
     it('Item Page Tests', () => {

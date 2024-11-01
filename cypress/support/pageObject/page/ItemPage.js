@@ -21,7 +21,7 @@ class ItemPage extends BasePage {
     }
 
     get removeFromCartButton() {
-        return cy.get('.btn_secondary'); // Селектор для кнопки "Удалить из корзины"
+        return cy.get('#remove'); // Селектор для кнопки "Удалить из корзины"
     }
 
     checkItemDetails() {
