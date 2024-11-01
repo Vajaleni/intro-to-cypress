@@ -1,24 +1,17 @@
 const { defineConfig } = require("cypress");
+const webpackConfig = require("./webpack.config.js"); 
 
 module.exports = defineConfig({
   e2e: {
     chromeWebSecurity: false,
     setupNodeEvents(on, config) {
-      // Используем значение переменной окружения из командной строки, если оно задано
-      config.env.BASE_URL = process.env.BASE_URL || config.env.BASE_URL || "https://www.saucedemo.com/";
+      on('file:preprocessor', require('@cypress/webpack-preprocessor')(webpackConfig));
+      config.env.BASE_URL = process.env.BASE_URL || config.env.BASE_URL || "https://www.saucedemo.com";
       return config;
     },
     env: {
-      BASE_URL: "https://www.saucedemo.com/"
+      BASE_URL: "https://www.saucedemo.com"
     }
-  },
+  }
 });
 
-
-
-{
-  env: {
-    MY_VARIABLE: "some_value"
-  }
-  
-}

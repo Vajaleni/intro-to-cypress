@@ -5,7 +5,7 @@ import BasePage from "./BasePage";
 class LoginPage extends BasePage {
 
     get userNameField() {
-        return cy.get('#user-name');
+        return cy.get('[data-test="username"]', {timeout: 10000});
     }
 
     get passwordField() {
@@ -34,5 +34,6 @@ class LoginPage extends BasePage {
         this.errorMSG.should('have.text', text);
     }
 }
+
 
 export default new LoginPage();
