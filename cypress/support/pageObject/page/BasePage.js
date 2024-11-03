@@ -6,6 +6,6 @@ export default class BasePage {
     }
 
     open(url) {
-        cy.visit(`${this.baseURL}${url}`); // Используем относительный URL
+        cy.visit(`${this.baseURL}${url}`);
     }
 }
