@@ -49,3 +49,4 @@ describe('SauceDemo Tests', () => {
         ItemPage.removeFromCart(); 
     });
 });
+
